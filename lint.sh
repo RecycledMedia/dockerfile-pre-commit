@@ -9,6 +9,7 @@ export PATH=$PATH:/usr/local/bin
 if [ `uname` = "Darwin" ]; then
     if ! which hadolint &>/dev/null; then
         >&2 echo 'hadolint command not found'
+    fi
     if [ -z "$(command -v brew)" ]; then
         exit 1
     fi
@@ -19,4 +20,3 @@ elif [ `uname` = "Linux" ]; then
 fi
 
 hadolint "$@"
-
