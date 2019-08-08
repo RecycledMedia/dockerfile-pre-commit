@@ -12,8 +12,9 @@ fi
 if [ `uname` = "Darwin" ]; then
     if [ -z "$(command -v brew)" ]; then
         exit 1
+    elif [ -z "$(command -v hadolint)" ]; then
+            brew install hadolint
     fi
-    brew install hadolint
 elif [ `uname` = "Linux" ]; then
     if [ -z "$(command -v hadolint)" ]; then
         sudo curl -fsSL https://github.com/hadolint/hadolint/releases/download/v1.17.1/hadolint-Linux-x86_64 -o /usr/local/bin/hadolint
